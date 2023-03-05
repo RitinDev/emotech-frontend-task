@@ -9,6 +9,7 @@
 
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
 
     /* Stick to left side of the screen */
@@ -41,14 +42,13 @@
     display: flex;
     flex-direction: column;
     gap: 0.15em;
-    align-items: center;
 }
 
 .sidebar li {
     width: 35%;
     height: 35%;
     margin: 0;
-    padding: 0.6em;
+    padding: 0.9em;
     cursor: pointer;
 }
 
