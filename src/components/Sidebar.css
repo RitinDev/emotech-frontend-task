@@ -8,7 +8,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 
     /* Stick to left side of the screen */
     position: fixed;
@@ -39,7 +39,7 @@
 
     display: flex;
     flex-direction: column;
-    gap: -5em;
+    gap: 0.15em;
     align-items: center;
 }
 
@@ -60,5 +60,11 @@
     background-color: #fff;
     color: #333;
     border-radius: 7.5px;
-  }
-  
+}
+
+.sidebar-settings {
+    /* Place at the bottom of the sidebar */
+    margin: auto 0 2.5em 0;
+    
+    cursor: pointer;
+}

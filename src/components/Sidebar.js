@@ -1,13 +1,16 @@
+// Static imports
 import './Sidebar.css';
 import viteLogo from '../images/vite.svg';
 
+// Import useState hook from React
 import { useState } from 'react';
 
-import { HomeOutlined, AppstoreAddOutlined, ClockCircleOutlined, UserOutlined } from '@ant-design/icons';
+// Import icons from Ant Design
+import { HomeOutlined, AppstoreAddOutlined, ClockCircleOutlined, UserOutlined, SettingOutlined } from '@ant-design/icons';
 
 const Sidebar = () => {
     const menuItems = [
-        { icon: <HomeOutlined />},
+        { icon: <HomeOutlined /> },
         { icon: <AppstoreAddOutlined /> },
         { icon: <ClockCircleOutlined /> },
         { icon: <UserOutlined /> },
@@ -28,7 +31,9 @@ const Sidebar = () => {
                     </li>
                 ))}
             </ul>
-
+            <div className='sidebar-settings'>
+                <SettingOutlined />
+            </div>
         </div>
     );
 }
