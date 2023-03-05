@@ -68,3 +68,9 @@
     
     cursor: pointer;
 }
+
+.sidebar-settings:hover {
+    /* Make the settings icon spin on hover */
+    transform: rotate(180deg);
+    transition: transform 0.75s ease-in-out;
+}
