@@ -1,0 +1,36 @@
+.right-sidebar {
+    box-sizing: border-box;
+    width: 22%;
+    height: 90%;
+    /* Need a very light gray background */
+    background: #e3ecf1;
+    color: #687781;
+    padding: 2em 1.75em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25em;
+
+    /* Stick to right side of the screen */
+    position: fixed;
+    top: 3.5%;
+    right: 2%;
+
+    border-radius: 20px;
+}
+
+.right-sidebar p {
+    padding: 0;
+    margin: 0;
+}
+
+.output-settings-header {
+    font-size: 1.3rem;
+    margin: 0.25rem;
+}
+
+.file-location-header {
+    font-size: 1.1rem;
+    font-weight: bold;
+}

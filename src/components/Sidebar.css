@@ -5,6 +5,7 @@
     background: #e3ecf1;
     color: #282c34;
     padding: 20px;
+    text-align: left;
 
     display: flex;
     flex-direction: column;
