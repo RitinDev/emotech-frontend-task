@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import './RightSidebar.css';
 import { Input } from 'antd';
-import { FolderOutlined, RightOutlined, PlusSquareOutlined, CaretDownOutlined } from '@ant-design/icons';
+import { FolderOutlined, RightOutlined, PlusSquareOutlined, CaretRightFilled, CaretDownOutlined } from '@ant-design/icons';
 
-const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex}) => {
+const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex }) => {
     const [directoryPath, setDirectoryPath] = useState('');
-
     const handleDirectoryChange = (event) => {
         setDirectoryPath(event.target.value);
     }
 
+    const [advancedSettingsClicked, setAdvancedSettingsClicked] = useState(false);
+    const handleAdvSettingsChange = () => {
+        setAdvancedSettingsClicked(!advancedSettingsClicked);
+    }
+
+    // Function to handle the selection of an image from the pictures
     const handleImageSelection = (event) => {
         // Get the index of the image that was clicked
         const index = imageList.indexOf(event.target.src);
@@ -46,9 +51,11 @@ const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex}) => 
                     ))}
                 </div>
             </div>
-            <div className='advanced-settings'>
+            <div className='advanced-settings' onClick={handleAdvSettingsChange}>
                 <p className='advanced-settings-header'>Advanced Settings</p>
-                <span className='down-arrow'><CaretDownOutlined /></span>
+                <span className='advanced-settings-arrow'>
+                    {advancedSettingsClicked ? <CaretDownOutlined /> : <CaretRightFilled />}
+                </span>
             </div>
             <button className='generate-video-button'>GENERATE VIDEO</button>
         </div>
