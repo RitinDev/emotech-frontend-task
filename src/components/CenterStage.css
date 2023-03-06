@@ -55,10 +55,10 @@
     align-items: flex-start;
     gap: 10px;
 
-    background-color: #e3ecf0;
-    padding: 8.5px;
-    border-radius: 10px;
+    position: relative;
 
+    background-color: #e3ecf0;
+    border-radius: 10px;
     padding: 30px;
 }
 
@@ -66,8 +66,49 @@
     color: #3cd0b2;
     font-size: smaller;
     font-weight: bold;
+
+    width: 97%;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    position: relative;
 }
 
-.input-block-title .check {
-    margin-right: 10px;
+.check {
+    margin-right: 8.5px;
+}
+
+.upload-button {
+    margin-left: auto;
+    color: #51695b;
+    cursor: pointer;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+    background-color: #3cd0b2 !important;
+    border-color: #3cd0b2 !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after {
+    border-color: #3cd0b2;
+}
+
+.ant-radio-wrapper .ant-radio:hover .ant-radio-inner {
+    border-color: #3cd0b2;
+}
+
+.ant-radio-wrapper .ant-radio:hover .ant-radio-inner::after {
+    border-color: #3cd0b2;
+}
+
+.ant-radio-wrapper .ant-radio:focus .ant-radio-inner {
+    border-color: #3cd0b2;
+}
+
+.ant-radio-wrapper .ant-radio-checked::after {
+    border: 1px solid #3cd0b2 !important;
 }

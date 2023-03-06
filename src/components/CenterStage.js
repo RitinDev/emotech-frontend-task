@@ -1,12 +1,36 @@
 import './CenterStage.css'
 import MicImage from '../images/mic.png'
 
-import { CaretLeftFilled, CheckCircleFilled } from '@ant-design/icons';
-import { Image } from 'antd';
+import { useState } from 'react';
+import { CaretLeftFilled, CheckCircleFilled, AudioOutlined, FontColorsOutlined, UploadOutlined } from '@ant-design/icons';
+import { Image, Radio, Space, Input } from 'antd';
 
+const { TextArea } = Input;
 
 const CenterStage = () => {
     const testImage = "https://images.unsplash.com/photo-1677069955603-26200937faa7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+
+    const [value, setValue] = useState(1);
+
+    const onChange = e => {
+        setValue(e.target.value);
+    };
+
+    const radioStyle = {
+        display: 'block',
+        height: '30px',
+        lineHeight: '30px',
+        color: '#000000',
+        marginBottom: '10px',
+        fontSize: '1.2rem',
+    };
+
+    const selectedRadioStyle = {
+        ...radioStyle,
+        color: '#3cd0b2',
+        fontWeight: 'bold',
+    };
+
 
     return (
         <div className="center-stage">
@@ -36,12 +60,27 @@ const CenterStage = () => {
             <div className='center-stage-input-blocks'>
                 <div className='input-block one'>
                     <span className='input-block-title one'><CheckCircleFilled className='check' />Mode</span>
+                    <Radio.Group defaultValue="a" onChange={onChange} value={value}>
+                        <Space direction="vertical" style={{ alignItems: 'flex-start', gap: '15px' }}>
+                            <Radio style={value === 'a' ? selectedRadioStyle : radioStyle} value="a"><AudioOutlined className='check' />Audio + Text</Radio>
+                            <Radio style={value === 'b' ? selectedRadioStyle : radioStyle} value="b"><FontColorsOutlined className='check' />Text</Radio>
+                            <Radio style={value === 'c' ? selectedRadioStyle : radioStyle} value="c"><AudioOutlined className='check' />Audio</Radio>
+                        </Space>
+                    </Radio.Group>
                 </div>
                 <div className='input-block two'>
-                    <span className='input-block-title two'><CheckCircleFilled className='check' />Audio Input</span>
+                    <span className='input-block-title two'><CheckCircleFilled className='check' />Audio Input<UploadOutlined className='upload-button' /></span>
+                    
                 </div>
                 <div className='input-block three'>
-                    <span className='input-block-title three'><CheckCircleFilled className='check' />Text Input</span>
+                    <span className='input-block-title three'><CheckCircleFilled className='check' />Text Input <UploadOutlined className='upload-button' /></span>
+                    <TextArea
+                        showCount
+                        maxLength={300}
+                        autoSize={{ minRows: 4, maxRows: 8 }}
+                        style={{ width: '100%', minHeight: '100px' }}
+                        placeholder="Type your text here..."
+                    />
                 </div>
             </div>
         </div>
