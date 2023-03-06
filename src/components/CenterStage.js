@@ -1,7 +1,7 @@
 import './CenterStage.css'
 import MicImage from '../images/mic.png'
 
-import { CaretLeftFilled } from '@ant-design/icons';
+import { CaretLeftFilled, CheckCircleFilled } from '@ant-design/icons';
 import { Image } from 'antd';
 
 
@@ -35,13 +35,13 @@ const CenterStage = () => {
             </div>
             <div className='center-stage-input-blocks'>
                 <div className='input-block one'>
-                    <p className='input-block-title'>Title</p>
+                    <span className='input-block-title one'><CheckCircleFilled className='check' />Mode</span>
                 </div>
                 <div className='input-block two'>
-                    <p className='input-block-title'>Description</p>
+                    <span className='input-block-title two'><CheckCircleFilled className='check' />Audio Input</span>
                 </div>
                 <div className='input-block three'>
-                    <p className='input-block-title'>Tags</p>
+                    <span className='input-block-title three'><CheckCircleFilled className='check' />Text Input</span>
                 </div>
             </div>
         </div>
