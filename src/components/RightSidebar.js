@@ -3,14 +3,21 @@ import './RightSidebar.css';
 import { Input } from 'antd';
 import { FolderOutlined, RightOutlined, PlusSquareOutlined, CaretDownOutlined } from '@ant-design/icons';
 
-const RightSidebar = () => {
-    const testImage = "https://images.unsplash.com/photo-1677069955603-26200937faa7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-
+const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex}) => {
     const [directoryPath, setDirectoryPath] = useState('');
 
     const handleDirectoryChange = (event) => {
         setDirectoryPath(event.target.value);
     }
+
+    const handleImageSelection = (event) => {
+        // Get the index of the image that was clicked
+        const index = imageList.indexOf(event.target.src);
+        // Set the imageIndex to the index of the image that was clicked
+        setImageIndex(index);
+    }
+
+
     return (
         <div className="right-sidebar">
             <p className='output-settings-header'>Output Settings</p>
@@ -33,11 +40,10 @@ const RightSidebar = () => {
                     <span className='plus-icon'><PlusSquareOutlined /></span>
                 </div>
                 <div className='image-gallery-images'>
-                    <img src={testImage} alt="test" />
-                    <img src={testImage} alt="test" />
-                    <img src={testImage} alt="test" />
-                    <img src={testImage} alt="test" />
-                    <img src={testImage} alt="test" />
+                    {/* Loop through imageList and add img elements */}
+                    {imageList.map((imageUrl, index) => (
+                        <img key={index} src={imageUrl} alt={`Gallery ${index}`} onClick={handleImageSelection} />
+                    ))}
                 </div>
             </div>
             <div className='advanced-settings'>

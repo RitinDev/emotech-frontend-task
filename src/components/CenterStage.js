@@ -7,8 +7,7 @@ import { Image, Radio, Space, Input } from 'antd';
 
 const { TextArea } = Input;
 
-const CenterStage = () => {
-    const testImage = "https://images.unsplash.com/photo-1677069955603-26200937faa7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+const CenterStage = ({ imageList, setImageList, imageIndex, setImageIndex }) => {
 
     const [value, setValue] = useState(1);
 
@@ -37,7 +36,7 @@ const CenterStage = () => {
             <p className="untitled"><CaretLeftFilled /> Untitled</p>
             <div className="center-stage-image-container">
                 <Image className='center-stage-background'
-                    src={testImage}
+                    src={imageList[imageIndex]}
                     width='100%' height='100%'
                     style={{
                         objectFit: 'cover',
@@ -70,7 +69,7 @@ const CenterStage = () => {
                 </div>
                 <div className='input-block two'>
                     <span className='input-block-title two'><CheckCircleFilled className='check' />Audio Input<UploadOutlined className='upload-button' /></span>
-                    
+
                 </div>
                 <div className='input-block three'>
                     <span className='input-block-title three'><CheckCircleFilled className='check' />Text Input <UploadOutlined className='upload-button' /></span>
