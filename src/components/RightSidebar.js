@@ -4,6 +4,8 @@ import { Input } from 'antd';
 import { FolderOutlined, RightOutlined, PlusSquareOutlined, CaretDownOutlined } from '@ant-design/icons';
 
 const RightSidebar = () => {
+    const testImage = "https://images.unsplash.com/photo-1677069955603-26200937faa7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
+
     const [directoryPath, setDirectoryPath] = useState('');
 
     const handleDirectoryChange = (event) => {
@@ -29,6 +31,13 @@ const RightSidebar = () => {
                 <div className='image-gallery-header'>
                     <p>Picture</p>
                     <span className='plus-icon'><PlusSquareOutlined /></span>
+                </div>
+                <div className='image-gallery-images'>
+                    <img src={testImage} alt="test" />
+                    <img src={testImage} alt="test" />
+                    <img src={testImage} alt="test" />
+                    <img src={testImage} alt="test" />
+                    <img src={testImage} alt="test" />
                 </div>
             </div>
             <div className='advanced-settings'>

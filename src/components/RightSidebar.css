@@ -85,13 +85,59 @@ input.ant-input:focus {
   justify-content: space-between;
 }
 
-.image-gallery-header > span {
+.image-gallery-images {
+  width: 100%;
+  height: 130px;
+  overflow-x: scroll;
+  /* Enable horizontal scrolling */
+  white-space: nowrap;
+  /* Prevent line breaks between images */
+  display: flex;
+  /* Use flexbox to display images in a row */
+  flex-direction: row;
+  /* Set the direction of the flexbox to row */
+  gap: 15px;
+}
+
+.image-gallery-images img {
+  box-sizing: border-box;
+  height: 115px;
+  width: 90px;
+  object-fit: cover;
+}
+
+/* On hovering over the images, change cursor to pointer and add a #3cd0b2 border to the image with a smooth transition */
+.image-gallery-images img:hover {
+  cursor: pointer;
+  border: 3.5px solid #3cd0b2;
+  border-radius: 5px;
+  transition: 0.15s ease-in-out;
+}
+
+.image-gallery-images::-webkit-scrollbar {
+  height: 5px;
+  width: 2.5px;
+}
+
+.image-gallery-images::-webkit-scrollbar-track {
+  background: #e3ecf1;
+}
+
+.image-gallery-images::-webkit-scrollbar-thumb {
+  background: #51695b;
+  border-radius: 2px;
+}
+
+.image-gallery-images::-webkit-scrollbar-thumb:hover {
+  background: #3cd0b2;
+}
+
+.image-gallery-header>span {
   cursor: pointer;
 }
 
 .advanced-settings {
   font-size: 1.1rem;
-  font-weight: bold;
   width: 100%;
 
   display: flex;
@@ -105,6 +151,8 @@ input.ant-input:focus {
   width: 70%;
   height: 4.5em;
   align-self: center;
+  margin-top: auto;
+  margin-bottom: 10px;
 
   background: #3cd0b2;
   color: #51695b;
@@ -113,7 +161,7 @@ input.ant-input:focus {
 
   font-size: 0.75rem;
   font-weight: bold;
-  
+
   cursor: pointer;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
