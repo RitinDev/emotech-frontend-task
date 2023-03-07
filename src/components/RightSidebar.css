@@ -167,6 +167,6 @@ input.ant-input:focus {
 }
 
 .generate-video-button:hover {
-  background: #52d9be;
-  color: #51695b;
+  filter: brightness(1.1);
+  transition: filter 0.2s ease-in-out;
 }

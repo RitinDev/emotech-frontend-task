@@ -1,5 +1,6 @@
 import './CenterStage.css'
 import MicImage from '../images/mic.png'
+import AudioWaves from '../images/audio-waves.png'
 
 import { useState } from 'react';
 import { CaretLeftFilled, CheckCircleFilled, AudioOutlined, FontColorsOutlined, UploadOutlined } from '@ant-design/icons';
@@ -69,7 +70,14 @@ const CenterStage = ({ imageList, setImageList, imageIndex, setImageIndex }) => 
                 </div>
                 <div className='input-block two'>
                     <span className='input-block-title two'><CheckCircleFilled className='check' />Audio Input<UploadOutlined className='upload-button' /></span>
-
+                    <div className='audio-input-block-content'>
+                        <CheckCircleFilled className='big-check' />
+                        <Image 
+                        className='audio-waves'
+                        src={AudioWaves} 
+                        width='80%' height='70%'
+                        preview={false} />
+                    </div>
                 </div>
                 <div className='input-block three'>
                     <span className='input-block-title three'><CheckCircleFilled className='check' />Text Input <UploadOutlined className='upload-button' /></span>

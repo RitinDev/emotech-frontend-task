@@ -113,3 +113,28 @@
 .ant-radio-wrapper .ant-radio-checked::after {
     border: 1px solid #3cd0b2 !important;
 }
+
+.audio-input-block-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    width: 100%;
+    height: 100%;
+}
+
+.big-check {
+    color: #3cd0b2;
+    font-size: 3.5rem;
+    position: relative;
+    bottom: 10%;
+
+    cursor: pointer;
+}
+
+.big-check:hover {
+    filter: brightness(1.1);
+    transition: filter 0.1s linear;
+}
