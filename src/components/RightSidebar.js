@@ -16,12 +16,23 @@ const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex }) =>
 
     // Function to handle the selection of an image from the pictures
     const handleImageSelection = (event) => {
+        // Remove css class 'selected-image' from all images
+        const images = document.querySelectorAll('.image-gallery-images img');
+        images.forEach(image => {
+            image.classList.remove('selected-image');
+        });
         // Get the index of the image that was clicked
         const index = imageList.indexOf(event.target.src);
         // Set the imageIndex to the index of the image that was clicked
         setImageIndex(index);
+        event.target.classList.add('selected-image');
     }
 
+    const handleAddPic = () => {
+        // Add a new image to the imageList
+        let imgToBeAdded = 'https://images.unsplash.com/photo-1677907564592-7a2880120951?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
+        setImageList([...imageList, imgToBeAdded]);
+    }
 
     return (
         <div className="right-sidebar">
@@ -42,7 +53,7 @@ const RightSidebar = ({ imageList, setImageList, imageIndex, setImageIndex }) =>
             <div className="image-gallery">
                 <div className='image-gallery-header'>
                     <p>Picture</p>
-                    <span className='plus-icon'><PlusSquareOutlined /></span>
+                    <span className='plus-icon' onClick={handleAddPic}><PlusSquareOutlined /></span>
                 </div>
                 <div className='image-gallery-images'>
                     {/* Loop through imageList and add img elements */}
