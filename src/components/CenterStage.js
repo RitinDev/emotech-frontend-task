@@ -76,6 +76,11 @@ const CenterStage = ({ imageList, setImageList, imageIndex, setImageIndex }) => 
                         className='audio-waves'
                         src={AudioWaves} 
                         width='80%' height='70%'
+                        style={{
+                            width: '80%',
+                            height: '70%',
+                            objectFit: 'cover',
+                        }}
                         preview={false} />
                     </div>
                 </div>

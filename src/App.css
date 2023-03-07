@@ -8,10 +8,18 @@
 .app-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   background: var(--background-color);
   color: var(--text-color);
   font-size: calc(10px + 2vmin);
   text-align: center;
+
+}
+
+/* On mobile, make the flexbox a column */
+@media (max-width: 600px) {
+  .app-container {
+    flex-direction: column;
+    padding: 13.5px;
+  }
 }

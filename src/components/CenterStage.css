@@ -138,3 +138,23 @@
     filter: brightness(1.1);
     transition: filter 0.1s linear;
 }
+
+/* On mobile, center flexbox and make everything fit in the mobile screen */
+@media only screen and (max-width: 600px) {
+    .center-stage {
+        align-items: center;
+        padding: 5% 20%;
+        height: 50%;
+        gap: 20px;
+    }
+
+    .center-stage-image-container {
+        width: 100%;
+        height: 50%;
+    }
+
+    .center-stage-input-blocks {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
